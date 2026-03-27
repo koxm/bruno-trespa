@@ -1,0 +1,28 @@
+info:
+  name: Logicall Attach Proof of Delivery
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://{{tenant}}.{{api_env}}.apimanagement.eu10.hana.ondemand.com/v1/forwarders/inbound/attachpodurl
+  body:
+    type: xml
+    data: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r
+
+      <ns0:mtShipmentProofOfDeliveryRequest xmlns:ns0=\"urn:trespa:_default_fwd\">\r
+
+      \  <ShipmentNumber>773776</ShipmentNumber>\r
+
+      \  <StageNumber>2</StageNumber>\r
+
+      \  <URL>http://trespa.com</URL>\r
+
+      </ns0:mtShipmentProofOfDeliveryRequest>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

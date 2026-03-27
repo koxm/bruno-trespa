@@ -1,0 +1,17 @@
+info:
+  name: Logicall
+  type: folder
+  seq: 1
+
+request:
+  auth:
+    type: oauth2
+    flow: client_credentials
+    accessTokenUrl: https://{{tenant}}.{{api_env}}.apimanagement.eu10.hana.ondemand.com/oauth/token
+    credentials:
+      clientId: "{{Logicall_ClientID}}"
+      clientSecret: "{{Logicall_ClientSecret}}"
+      placement: basic_auth_header
+    tokenConfig:
+      placement: {}
+      source: access_token

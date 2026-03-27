@@ -1,0 +1,18 @@
+info:
+  name: FOR001 - Forwarder to SAPERP - Shipment update
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/http/forwarders/shipmentupdate"
+  body:
+    type: xml
+    data: <dummy>test</dummy>
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

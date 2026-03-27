@@ -1,0 +1,10 @@
+info:
+  name: Cloud Integration
+  type: folder
+  seq: 2
+
+request:
+  auth:
+    type: basic
+    username: "{{cloudintegration_key}}"
+    password: "{{cloudintegration_secret}}"

@@ -1,0 +1,32 @@
+info:
+  name: Logicall Shipment update inbound
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://{{tenant}}.{{api_env}}.apimanagement.eu10.hana.ondemand.com/v1/forwarders/inbound/shipmentupdate
+  body:
+    type: xml
+    data: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r
+
+      <ns0:mtShipmentStatusChangeRequest xmlns:ns0=\"urn:trespa:_default_fwd\">\r
+
+      \  <ShipmentNumber>0000774099</ShipmentNumber>\r
+
+      \  <StageNumber></StageNumber>\r
+
+      \  <Status>CHECKINEXEC</Status>\r
+
+      \  <Date>20230414</Date>\r
+
+      \  <Time>211700</Time>\r
+
+      </ns0:mtShipmentStatusChangeRequest>"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
