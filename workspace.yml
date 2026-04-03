@@ -1,0 +1,106 @@
+opencollection: 1.0.0
+info:
+  name: "Oliver"
+  type: workspace
+
+collections:
+  - name: "Forwarders"
+    path: "collections/Forwarders"
+
+specs:
+
+docs: |-
+  # Bruno & Git – Handleiding
+  
+  ## Wijzigingen binnenhalen (Pull)
+  
+  Voordat je begint met werken, haal je altijd eerst de laatste versie op van de repository.
+  
+  ### Via Bruno (GUI)
+  
+  1. Open je collectie in Bruno.
+  2. Ga naar het **Git**-tabblad (bovenin bij je collectie).
+  3. Klik op **Fetch** om te controleren of er nieuwe wijzigingen zijn.
+  4. Klik op **Pull** om de wijzigingen daadwerkelijk toe te passen op je lokale bestanden.
+  
+  ### Via de terminal
+  
+  ```bash
+  cd C:\Users\miche\Documents\02 - Zakelijk\04 - Bruno\Trespa
+  git pull origin main
+  ```
+  
+  ---
+  
+  ## Wijzigingen pushen naar de repo
+  
+  Nadat je aanpassingen hebt gemaakt aan je Bruno-collectie (nieuwe requests, gewijzigde environments, etc.), push je deze naar GitHub.
+  
+  ### Via de terminal
+  
+  ```bash
+  # 1. Bekijk welke bestanden er gewijzigd zijn
+  git status
+  
+  # 2. Voeg alle wijzigingen toe aan staging
+  git add .
+  
+  # 3. Maak een commit met een beschrijving
+  git commit -m "Beschrijving van je wijziging"
+  
+  # 4. Push naar GitHub
+  git push origin main
+  ```
+  
+  ### Tips
+  
+  - Gebruik duidelijke commit-berichten, bijvoorbeeld:
+    - `Nieuwe request toegevoegd voor /api/orders`
+    - `Environment variabelen bijgewerkt`
+    - `Authenticatie headers aangepast`
+  - Controleer altijd eerst met `git status` wat er gewijzigd is voordat je commit.
+  
+  ---
+  
+  ## Overzicht: Fetch vs Pull vs Push
+  
+  | Actie     | Richting              | Wat doet het?                                      |
+  |-----------|-----------------------|----------------------------------------------------|
+  | **Fetch** | GitHub → Lokaal       | Controleert of er nieuwe wijzigingen zijn           |
+  | **Pull**  | GitHub → Lokaal       | Haalt wijzigingen op én past ze toe                 |
+  | **Push**  | Lokaal → GitHub       | Stuurt jouw lokale wijzigingen naar GitHub           |
+  
+  ---
+  
+  ## Veelvoorkomende situaties
+  
+  ### Fout: `remote origin already exists`
+  
+  De remote is al ingesteld. Controleer of de URL klopt:
+  
+  ```bash
+  git remote -v
+  ```
+  
+  Wil je de URL aanpassen:
+  
+  ```bash
+  git remote set-url origin https://github.com/oliver/bruno-trespa.git
+  ```
+  
+  ### Fout: `failed to push some refs`
+  
+  Dit betekent dat er wijzigingen op GitHub staan die je nog niet lokaal hebt. Los dit op door eerst te pullen:
+  
+  ```bash
+  git pull origin main
+  git push origin main
+  ```
+  
+  ### Bestanden negeren met `.gitignore`
+  
+  Voeg bestanden toe aan `.gitignore` die je niet in de repo wilt, zoals gevoelige environment-bestanden:
+  
+  ```
+  environments/secret.bru
+  ```

@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: https://data-test.adabt.com/dw/Request/lankveld/trespa/transportorders
+  url: https://data-test.adabt.com/dw/Request/lankveld/trespa/transportordersx
   body:
     type: xml
     data: "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r
